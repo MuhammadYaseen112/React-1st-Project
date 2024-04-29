@@ -4,12 +4,14 @@ import TotalScore from "../TotalScore/TotalScore"
 import RollDice from "../Roll Dice/RollDice"
 import { useState } from "react"
 import { Button, OutlineButton } from "../../Styled/Button"
+import Rules from "../Rules/Rules"
 
 const GamePlay = ()=>{
     const [score, setScore] = useState(0);
     const [selectedNumber, setSelectedNumber] = useState()
     const [currentDice, setCurrentDice] = useState(1)
     const [error, setError] = useState("")
+    const [showRules, setShowRules] = useState(false)
 
     const generateRandomNumber  = (min, max)=>{
         return Math.floor(Math.random()*(max-min)+min);
@@ -49,8 +51,11 @@ const GamePlay = ()=>{
             <RollDice currentDice={currentDice} roleDice={roleDice}/>
             <div className="btns">
                 <OutlineButton onClick={resetScore}>Reset</OutlineButton>
-                <Button>Show Rules</Button>
+                <Button onClick={()=>setShowRules((prev)=>!prev)}>{
+                    showRules ? "Hide" : "Show"
+                } Rules</Button>
             </div>
+            {showRules && <Rules/>}
         </MainContainer>
     )
 }
