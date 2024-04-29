@@ -1,18 +1,11 @@
 // import { useState } from "react"; to be remove
 import styled from "styled-components";
 
-const RollDice = ({currentDice,setCurrentDice})=>{
+const RollDice = ({currentDice,roleDice})=>{
  
     // const [currentDice, setCurrentDice] = useState(1)
 
-    const generateRandomNumber  = (min, max)=>{
-        return Math.floor(Math.random()*(max-min)+min);
-    }
-
-    const roleDice = ()=>{
-        const randomNumber = generateRandomNumber(1,7)
-        setCurrentDice((prev)=>randomNumber)
-    }
+   
 
     return (
         <DiceContainer>
