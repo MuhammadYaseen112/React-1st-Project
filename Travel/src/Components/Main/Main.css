@@ -38,6 +38,8 @@
     }
 
     .secContent{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
         justify-content: center;
         gap: 1.5rem;
 
@@ -154,6 +156,36 @@
 
             }
 
+        }
+    }
+}
+
+/* MEDIA QURIES ===================> */
+
+@media screen and (min-width:500px) {
+    .title{
+        font-size: 1.5rem;
+
+        &::after{
+            width: 155px !important;
+        }
+    }
+
+    .secContent{
+        grid-template-columns: repeat(2, 1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
+
+@media screen and (min-width:840px) {
+    .secContent{
+        grid-template-columns: repeat(3,1fr);
+
+        .singleDestination{
+            height: auto;
         }
     }
 }
