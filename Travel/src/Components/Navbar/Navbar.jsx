@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MdTravelExplore } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
@@ -5,10 +6,24 @@ import "./Navbar.css"
 
 
 
+
 const Navbar = ()=>{
+
+    const [active, setActive] = useState('navBar')
+
+    // Function to toggle navBar
+    const showNav = ()=>{
+        setActive('navBar activeNavbar')
+    }
+
+    // Function to remove Navbar
+    const removeNavbar = ()=>{
+        setActive('navBar')
+    }
+
     return(
         <section className="navBarSection">
-            <header className="hear flex">
+            <header className="header flex">
 
 
                 <div className="logoDiv">
@@ -17,7 +32,7 @@ const Navbar = ()=>{
                     </a>
                 </div>
 
-                <div className="navBar">
+                <div className={active}>
                     <ul className="navLists flex">
                         <li className="navItem">
                             <a href="#" className="navLink">Home</a>
@@ -44,12 +59,12 @@ const Navbar = ()=>{
                             <a href="#">Book Now</a>
                         </button>
                     </ul>
-                    <div className="closeNavbar">
+                    <div onClick={removeNavbar} className="closeNavbar">
                     <AiFillCloseCircle className="icon"/>
                     </div>
                 </div>
 
-                <div className="toggleNavbar">
+                <div onClick={showNav} className="toggleNavbar">
                 <FaBars className="icon"/>
                 </div>
 

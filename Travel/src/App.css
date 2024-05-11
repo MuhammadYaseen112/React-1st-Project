@@ -21,6 +21,10 @@
   --carBG:rgb(255,255,235);
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   background: var(--bodyColor);
 }
