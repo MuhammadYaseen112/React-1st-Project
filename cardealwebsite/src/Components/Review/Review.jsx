@@ -1,3 +1,5 @@
+import './Review.css'
+
 const Review = ()=>{
     return(
         <>

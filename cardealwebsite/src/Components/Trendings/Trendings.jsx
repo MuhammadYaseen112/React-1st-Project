@@ -1,3 +1,5 @@
+import './Trendings.css';
+
 const Trending = ()=>{
     return(
         <></>
